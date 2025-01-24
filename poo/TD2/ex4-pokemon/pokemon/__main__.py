@@ -7,12 +7,7 @@ from .core import PokemonFactory
 def simulate_battle(pokemon1, pokemon2):
     battle = Battle(pokemon1, pokemon2)
     battle.start_battle()
-    if pokemon2.hp <= 0:
-        print(f"{pokemon2.name} is KO! {pokemon1.name} wins!")
-    if pokemon1.hp <= 0:
-        print(f"{pokemon1.name} is KO! {pokemon2.name} wins!")
-    print(f"\n\nCombat finish: you {'loose' if pokemon1.hp <= 0 else 'win'}!")
-    input("\nAppuyez sur Entrée pour continuer...")
+
 
 
 if __name__ == '__main__':

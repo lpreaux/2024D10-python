@@ -14,7 +14,7 @@ class TurnService:
         should_continue = command.execute()
         if action == BattleAction.ATTACK:
             self.context.notify(self.context.player_pokemon, self.context.enemy_pokemon)
-            sleep(2)
+            sleep(1)
         return should_continue
 
     def enemy_action(self) -> bool:
@@ -22,5 +22,5 @@ class TurnService:
                                                               self.context.player_pokemon)
         should_continue = command.execute()
         self.context.notify(self.context.player_pokemon, self.context.enemy_pokemon)
-        sleep(2)
+        sleep(1)
         return should_continue

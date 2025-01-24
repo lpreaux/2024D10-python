@@ -69,7 +69,7 @@ class BattleDisplay(BattleObserver):
             self._refresh_display()
 
     def _refresh_display(self):
-        self._clear_screen()
+        self.clear_screen()
         print(f"\n{Colors.BOLD}⚔️  POKEMON BATTLE  ⚔️{Colors.ENDC}\n")
         self._draw_box(lambda: self.display_pokemon_info(self.current_state.enemy_pokemon, is_enemy=True))
         print()
@@ -79,7 +79,7 @@ class BattleDisplay(BattleObserver):
         print()
         self._draw_battle_log()
 
-    def _clear_screen(self):
+    def clear_screen(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def _draw_box(self, content_fn):

@@ -27,7 +27,7 @@ class FleeCommand(BattleCommand):
         self.context = context
 
     def execute(self) -> bool:
-        self.context.add_message("You fled from battle!")
+        self.context.add_message("You try to flee")
         return False
 
 
