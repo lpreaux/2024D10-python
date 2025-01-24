@@ -3,7 +3,7 @@ from time import sleep
 from typing import Optional, Dict
 
 from ..core import Pokemon
-from .battle_menu import BattleAction
+from .battle_menu import BattleActions
 
 class BattleCommand(ABC):
     @abstractmethod
@@ -35,9 +35,9 @@ class BattleCommandFactory:
     def __init__(self, context):
         self.context = context
 
-    def create_command(self, action: BattleAction, attacker: Optional[Pokemon] = None, defender: Optional[Pokemon] = None) -> BattleCommand:
-        commands: Dict[BattleAction, BattleCommand] = {
-            BattleAction.ATTACK: AttackCommand(self.context, attacker, defender),
-            BattleAction.FLEE: FleeCommand(self.context),
+    def create_command(self, action: BattleActions, attacker: Optional[Pokemon] = None, defender: Optional[Pokemon] = None) -> BattleCommand:
+        commands: Dict[BattleActions, BattleCommand] = {
+            BattleActions.ATTACK: AttackCommand(self.context, attacker, defender),
+            BattleActions.FLEE: FleeCommand(self.context),
         }
         return commands[action]

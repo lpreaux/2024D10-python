@@ -10,7 +10,7 @@ from .battle_display import Subject, BattleDisplay
 class Battle(Subject):
     def __init__(self, player_pokemon: Pokemon, enemy_pokemon: Pokemon):
         super().__init__()
-        self.__state = StartBattle()
+        self._state = StartBattle()
         self.player_pokemon = player_pokemon
         self.enemy_pokemon = enemy_pokemon
         self.menu = BattleActionMenu(self)
@@ -25,12 +25,12 @@ class Battle(Subject):
         self.display.clear_screen()
         while self.execute_turns():
             pass
-        self.__state.handle_state(self)
+        self._state.handle_state(self)
         self.display.clear_screen()
 
     def execute_turns(self):
-        while not isinstance(self.__state, EndBattle):
-            self.__state.handle_state(self)
+        while not isinstance(self._state, EndBattle):
+            self._state.handle_state(self)
 
     def next_state(self, state):
-        self.__state = state
+        self._state = state
