@@ -3,7 +3,7 @@ import os
 from .battle import Battle
 from .core import PokemonFactory
 from .game import Game
-
+from .session.session import Session
 
 # def simulate_battle(pokemon1, pokemon2):
 #     battle = Battle(pokemon1, pokemon2)
@@ -43,5 +43,5 @@ from .game import Game
 #         simulate_battle(pokemon1, pokemon2)
 
 if __name__ == '__main__':
-    Game = Game()
-    Game.start_game()
+    game = Game()
+    game.start_game()

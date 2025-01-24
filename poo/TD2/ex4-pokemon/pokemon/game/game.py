@@ -8,7 +8,8 @@ class Game:
     def __init__(self):
         self._state: GameState = StartGame()
         self._menu: GameMenu = GameMenu()
-        self._command_factory = GameCommandFactory()
+        self._command_factory = GameCommandFactory(self)
+        self._pokemon_data = None
 
         self._game_service: GameService = GameService(self)
 
@@ -23,6 +24,16 @@ class Game:
     @property
     def command_factory(self) -> GameCommandFactory:
         return self._command_factory
+
+    @property
+    def pokemon_data(self):
+        return self._pokemon_data
+
+    @pokemon_data.setter
+    def pokemon_data(self, data):
+        if self.pokemon_data is not None:
+            return
+        self._pokemon_data = data
 
     @property
     def game_service(self) -> GameService:

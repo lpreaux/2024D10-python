@@ -27,4 +27,4 @@ class PlayerAction(GameState):
 
 class EndGame(GameState):
     def handle_state(self, context):
-        pass
+        print("Quitting the game...")
