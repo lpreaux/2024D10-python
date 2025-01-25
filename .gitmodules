@@ -1,0 +1,3 @@
+[submodule "poo/TD2/ex4-pokemon"]
+	path = poo/TD2/ex4-pokemon
+	url = git@gitlab.com:lpreaux/pykerogue.git
